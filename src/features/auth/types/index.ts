@@ -8,3 +8,6 @@ export type User = {
   name: string;
   role: string;
 };
+export type ForgotPasswordDTO = {
+  email: string;
+};
