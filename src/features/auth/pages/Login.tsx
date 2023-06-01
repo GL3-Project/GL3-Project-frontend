@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react';
 import { FaUserAlt, FaLock } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { LoginDTO } from '@/features/auth/types';
 import { useLoginMutation } from '@/features/auth/api/useLoginMutation';
 
@@ -95,7 +95,9 @@ export function LoginPage() {
                   </InputRightElement>
                 </InputGroup>
                 <FormHelperText textAlign="right">
-                  <Link as={RouterLink} color="teal.500" to="/auth/forgotPassword">forgot password?
+                  <Link
+                    href="forgotPassword"
+                  >forgot password?
                   </Link>
                 </FormHelperText>
               </FormControl>
@@ -112,6 +114,12 @@ export function LoginPage() {
           </form>
         </Box>
       </Stack>
+      <Box>
+        New to us?{' '}
+        <Link color="teal.500" href="signup">
+          Sign Up
+        </Link>
+      </Box>
     </Flex>
 
   );
