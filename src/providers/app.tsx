@@ -8,6 +8,7 @@ import { NotificationHook } from '@/hooks/notificationsHook';
 import AuthProvider from '@/lib/auth';
 import { AxiosInterceptor } from '@/lib/axios';
 import { queryClient } from '@/lib/react-query';
+import theme from '@/theme/theme';
 
 type AppProviderProps = {
   children: React.ReactNode;
@@ -15,7 +16,7 @@ type AppProviderProps = {
 
 export function AppProvider({ children }: AppProviderProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <React.Suspense
         fallback={(
           <Flex alignItems="center" justifyContent="center">
